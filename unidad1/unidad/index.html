@@ -16,13 +16,15 @@
         <link rel="prev" href="../..">
       
       
+        <link rel="next" href="../unidad2/">
+      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>Unitat 1 - Administració de Sistemes Operatius</title>
+        <title>Blue Team - Administració de Sistemes Operatius</title>
       
     
     
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#help" class="md-skip">
+        <a href="#part-del-servidor" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Unitat 1
+              Blue Team
             
           </span>
         </div>
@@ -364,21 +366,123 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Blue Team
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Unitat 1
+    Blue Team
     
   </span>
   
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-del-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part del servidor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-del-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part del client
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part del client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#execucio-de-lscript" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execució de l’script
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracio-del-servei" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuració del servei
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificacio-al-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificació al servidor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidad2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Red Team
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -407,7 +511,50 @@
 
 
 
-<h1 id="help">help</h1>
+  <h1>Blue Team</h1>
+
+<h2 id="part-del-servidor"><strong>Part del servidor</strong></h2>
+<p>Per aquest apartat he decidit implementar tant la part de <strong>Blue Team</strong> com la de <strong>Red Team</strong>.</p>
+<p>En primer lloc, he creat un contenidor <strong>Docker</strong> en un altre equip amb <strong>Ubuntu Desktop</strong>, que actuarà com a servidor. Dins d’aquest contenidor he desenvolupat una <strong>API</strong> encarregada de rebre informació. Com que ja sé quin tipus de dades cal capturar, he creat una pàgina web amb <strong>Flask</strong> i <strong>HTML</strong> per mostrar-les de manera visual.</p>
+<h2 id="part-del-client"><strong>Part del client</strong></h2>
+<p>Pel que fa al client, cal executar la comanda:</p>
+<pre><code>nano /etc/systemd/system/client.service
+</code></pre>
+<p>A continuació, s’han d’introduir els paràmetres que es mostren a la imatge adjunta.</p>
+<p><img alt="alt text" src="../../images/lastwork.png" /></p>
+<p>Posteriorment, crearem l’script <strong>.sh</strong> amb les dades que volem recollir. Aquest script es desarà a la ruta:</p>
+<pre><code>nano /usr/local/bin/client-logs.sh
+</code></pre>
+<p><img alt="alt text" src="../../images/sh.png" /></p>
+<p>La seva funció principal és obtenir informació sobre la màquina, així com registrar els <strong>logs dels errors crítics</strong> i també els <strong>intents fallits d’accés per SSH</strong>.</p>
+<h3 id="execucio-de-lscript">Execució de l’script</h3>
+<p>Un cop creat l’script, li donem permisos d’execució amb la comanda:</p>
+<pre><code>chmod +x nom_del_script.sh
+</code></pre>
+<h3 id="configuracio-del-servei">Configuració del servei</h3>
+<p>Després, reiniciem el daemon-reload i activem el servei:</p>
+<pre><code>sudo systemctl daemon-reload
+</code></pre>
+<pre><code>sudo systemctl enable client.service
+</code></pre>
+<p>En aquest punt podem reiniciar el procés manualment o bé reiniciar directament l’equip.</p>
+<h3 id="verificacio-al-servidor">Verificació al servidor</h3>
+<p>Ara ens dirigim al nostre servidor receptor de la informació.<br />
+1. Obrim el navegador.<br />
+2. Introduïm la IP del nostre PC seguida del port 5000.  </p>
+<p>A la pàgina web creada amb Flask, podem observar:  </p>
+<ul>
+<li>La informació de l’ordinador.  </li>
+</ul>
+<p><img alt="alt text" src="../../images/2025-09-24_19-34.png" /></p>
+<ul>
+<li>Els errors crítics registrats.  </li>
+</ul>
+<p><img alt="alt text" src="../../images/2025-09-24_19-34_1.png" /></p>
+<ul>
+<li>Els intents fallits d’accés SSH.  </li>
+</ul>
+<p><img alt="alt text" src="../../images/2025-09-24_19-34_2.png" /></p>
 
 
 
