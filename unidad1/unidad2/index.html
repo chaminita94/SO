@@ -16,6 +16,8 @@
         <link rel="prev" href="../unidad/">
       
       
+        <link rel="next" href="../unidad4/">
+      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
@@ -233,7 +235,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../unidad/" class="md-tabs__link">
+        <a href="../unidad3/" class="md-tabs__link">
           
   
   
@@ -348,6 +350,29 @@
             Contingut
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidad3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Creació del target
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -503,10 +528,42 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#millores-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Millores 2.0
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidad4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Detecció d'intrusions
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -624,6 +681,22 @@
 <p><img alt="Revisió del fitxer" src="../../images/2025-09-28_16-40_3.png" /></p>
 <p>En cas que <strong>nmap</strong> no estigués instal·lat, ens retornaria els ports que estan escoltant actualment.</p>
 <p><img alt="Ports escoltant" src="../../images/image%20copy%204.png" /></p>
+<h2 id="millores-20">Millores 2.0</h2>
+<p>A més del que ja havíem implementat, m’han reptat a anar més enllà.<br />
+Per això, he millorat l’script perquè ara també exporta <strong>les cookies de sessió</strong> del navegador <strong>Firefox</strong> i <strong>les dades de navegació</strong>.</p>
+<p><img alt="Exportació de dades de navegació" src="../../images/2025-10-01_19-39.png" /></p>
+<p><img alt="Resultat de l’script" src="../../images/2025-10-01_19-40.png" /></p>
+<p>Per a les <strong>cookies</strong>, he afegit un <strong>check</strong> per comprovar si s’han exportat correctament.</p>
+<p><img alt="Comprovació de les cookies" src="../../images/2025-10-01_19-40_1.png" /></p>
+<p>El problema és que les <strong>cookies estan xifrades</strong>, i per poder-les llegir necessitem utilitzar un <strong>programa específic de Firefox</strong> per desxifrar-les i visualitzar-les correctament.</p>
+<p><img alt="Visualització de cookies xifrades" src="../../images/2025-09-28_16-40.png" /></p>
+<blockquote>
+<ul>
+<li>"Nota tècnica"
+    El xifratge de les cookies és una mesura de seguretat per protegir les sessions d'usuari.
+    Tot i que les cookies es poden exportar des del fitxer <code>cookies.sqlite</code>, el seu <code>value</code> pot estar xifrat amb la clau que es guarda al perfil de Firefox (<code>key4.db</code>).</li>
+</ul>
+</blockquote>
 
 
 
