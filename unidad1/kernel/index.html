@@ -868,8 +868,12 @@ GRUB_TIMEOUT=0  </p>
 <p><img alt="alt text" src="../../images/image%20copy%208.png" /></p>
 <p>Quan reiniciem el sistema, al menú d’arrencada ja ens apareix el nostre kernel personalitzat i compilat manualment.</p>
 <p><img alt="alt text" src="../../images/image%20copy%209.png" /></p>
-<p>Podem comprovar si s'ha executat el pr_notice amb aquesta comanda.</p>
+<p>Per comprovar que el nostre canvi amb <code>pr_notice()</code> funciona realment dins del kernel, utilitzem l’eina <code>dmesg</code> per mostrar els missatges generats durant l’arrencada. Si el nostre kernel personalitzat s’ha compilat i carregat correctament, el missatge apareixerà al log:</p>
+<p>dmesg | grep -i hola</p>
 <p><img alt="alt text" src="../../images/image%20copy%2010.png" /></p>
+<p>Sortida:</p>
+<p>[    0.023581] hola vitaliy.</p>
+<p>Això confirma que el codi modificat forma part del kernel i que s’executa durant el procés d’arrencada.</p>
 
 
 
