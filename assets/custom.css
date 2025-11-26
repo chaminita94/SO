@@ -1,3 +1,7 @@
+/* ========================================================= */
+/* FOOTER PERSONALITZAT (només si l'utilitzes a index.md)    */
+/* ========================================================= */
+
 .custom-footer {
   position: fixed;
   bottom: 0;
@@ -28,7 +32,10 @@
 }
 
 
-/* Blocs de codi */
+/* ========================================================= */
+/* BLOCS DE CODI                                              */
+/* ========================================================= */
+
 pre {
     background-color: #2d3e50;
     color: #ecf0f1;
@@ -45,12 +52,20 @@ pre:hover {
     background-color: #34495e;
 }
 
-/* Justificació del contingut */
+
+/* ========================================================= */
+/* JUSTIFICACIÓ DEL CONTINGUT                                */
+/* ========================================================= */
+
 .md-content {
     text-align: justify;
 }
 
-/* Imatges globals */
+
+/* ========================================================= */
+/* ESTIL D'IMATGES                                            */
+/* ========================================================= */
+
 img {
     max-width: 100%;
     height: auto;
@@ -58,12 +73,21 @@ img {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-img:hover {
+/*img:hover {
     transform: scale(1.05);
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
 }
+*/
 
-/* Enllaços amb subratllat subtil */
+img:hover {
+    transform: perspective(600px) rotateY(6deg) scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* ========================================================= */
+/* ENLLAÇOS AMB SUBRATLLAT SUAU                              */
+/* ========================================================= */
+
 a {
     position: relative;
     text-decoration: none;
@@ -91,4 +115,126 @@ a:hover {
 a:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+
+/* ========================================================= */
+/* AMPLADA DEL CONTINGUT                                     */
+/* ========================================================= */
+
+.md-main__inner {
+    max-width: 1400px;
+}
+
+
+/* ========================================================= */
+/* NAVBAR — TEXT PROFESSIONAL (LIGHT / DARK MODE)            */
+/* ========================================================= */
+
+/* MODE CLAR */
+[data-md-color-scheme="default"] .md-header__title,
+[data-md-color-scheme="default"] .md-header__button,
+[data-md-color-scheme="default"] .md-tabs__link,
+[data-md-color-scheme="default"] .md-tabs__link--active,
+[data-md-color-scheme="default"] .md-nav__title {
+    color: #000000 !important;
+}
+
+/* MODE FOSC */
+[data-md-color-scheme="slate"] .md-header__title,
+[data-md-color-scheme="slate"] .md-header__button,
+[data-md-color-scheme="slate"] .md-tabs__link,
+[data-md-color-scheme="slate"] .md-tabs__link--active,
+[data-md-color-scheme="slate"] .md-nav__title {
+    color: #ffffff !important;
+}
+
+
+/* ========================================================= */
+/* SIDEBAR — TEXT UNIFORME (TÍTOLS + SUBTÍTOLS + LINKS)      */
+/* ========================================================= */
+
+/* MODE CLAR */
+[data-md-color-scheme="default"] .md-sidebar__inner,
+[data-md-color-scheme="default"] .md-nav__title,
+[data-md-color-scheme="default"] .md-nav__item--nested > label,
+[data-md-color-scheme="default"] .md-nav__link,
+[data-md-color-scheme="default"] .md-nav__link--active,
+[data-md-color-scheme="default"] .md-nav__item a {
+    color: #000000 !important;
+}
+
+/* Hover mode clar */
+[data-md-color-scheme="default"] .md-nav__link:hover {
+    color: #333333 !important;
+}
+
+/* MODE FOSC */
+[data-md-color-scheme="slate"] .md-sidebar__inner,
+[data-md-color-scheme="slate"] .md-nav__title,
+[data-md-color-scheme="slate"] .md-nav__item--nested > label,
+[data-md-color-scheme="slate"] .md-nav__link,
+[data-md-color-scheme="slate"] .md-nav__link--active,
+[data-md-color-scheme="slate"] .md-nav__item a {
+    color: #ffffff !important;
+}
+
+/* Hover mode fosc */
+[data-md-color-scheme="slate"] .md-nav__link:hover {
+    color: #e6e6e6 !important;
+}
+
+/* gollum theme customizations */
+/* ===== GOLLUM FULLSCREEN ===== */
+
+#gollum-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(12, 12, 12, 0.92);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.gollum-container {
+    text-align: center;
+    animation: popIn 0.3s ease-out;
+}
+
+.gollum-img {
+    max-height: 60vh;
+    filter: drop-shadow(0px 0px 20px #000);
+}
+
+.gollum-text {
+    color: #e8e8e8;
+    font-size: 2rem;
+    margin-top: 20px;
+    font-family: "Georgia", serif;
+    text-shadow: 0px 0px 10px black;
+}
+
+/* Animacions */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.gollum-hide {
+    animation: fadeOut 0.4s forwards;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
