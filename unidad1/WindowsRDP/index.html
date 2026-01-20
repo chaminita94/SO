@@ -307,6 +307,26 @@
   
 
       
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ubuntu-ad/" class="md-tabs__link">
+          
+  
+  
+  Integració Ubuntu-AD
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -841,6 +861,148 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Integració Ubuntu-AD
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Integració Ubuntu-AD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducció
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/part1-ubuntu-ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 1: Unió Ubuntu a AD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/part2-iis-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 2: Servidor web IIS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/part3-https-certificats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 3: Certificats HTTPS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -969,24 +1131,24 @@
 <hr />
 <h3 id="funcionament-del-script-i-proves-captures">Funcionament del Script i Proves (Captures)</h3>
 <p>Posem el nostre script en una carpeta d'instal·lació per simular un escenari de desplegament:</p>
-<p><img alt="Carpeta d'instal·lació de l'script amb el fitxer principal i el desplegador" src="../../images/2025-10-25_21-27.png" /></p>
+<p><img alt="Carpeta d'instal·lació de l'script amb el fitxer principal i el desplegador" src="../../images/windowsrdp/2025-10-25_21-27.png" /></p>
 <p>El codi font (parcialment pixelat per seguretat) gestiona la descàrrega i la persistència.</p>
-<p><img alt="Codi font de l'script install.ps1 (parcialment pixelat) mostrant la connexió al servidor i la creació de persistència." src="../../images/image%20copy%206.png" /></p>
+<p><img alt="Codi font de l'script install.ps1 (parcialment pixelat) mostrant la connexió al servidor i la creació de persistència." src="../../images/windowsrdp/image%20copy%206.png" /></p>
 <p><strong>Prova 1: Instal·lació i Persistència</strong></p>
 <p>Executem l'script dins de PowerShell. Es pot veure que s'executa i crea l'entrada de persistència al registre de Windows.</p>
-<p><img alt="Execució de l'script a PowerShell i verificació de la clau de registre afegida per a l'execució automàtica." src="../../images/2025-10-25_21-29.png" /></p>
+<p><img alt="Execució de l'script a PowerShell i verificació de la clau de registre afegida per a l'execució automàtica." src="../../images/windowsrdp/2025-10-25_21-29.png" /></p>
 <p>Comprovem el directori i podem veure que l'arxiu principal (<code>AdminSetup.ps1</code>) s'ha descarregat correctament.</p>
-<p><img alt="Comprovació del directori on s'ha descarregat l'arxiu AdminSetup.ps1." src="../../images/2025-10-25_21-29_1.png" /></p>
+<p><img alt="Comprovació del directori on s'ha descarregat l'arxiu AdminSetup.ps1." src="../../images/windowsrdp/2025-10-25_21-29_1.png" /></p>
 <p><strong>Prova 2: Execució i Accés Remot</strong></p>
 <p>Després de reiniciar l'ordinador, el component principal s'executa automàticament, habilita l'RDP, crea l'usuari administrador i, automàticament, envia les credencials.</p>
-<p><img alt="Missatge de Telegram rebut amb les credencials del nou usuari administrador (User, Password, IP)." src="../../images/2025-10-25_22-06.png" /></p>
+<p><img alt="Missatge de Telegram rebut amb les credencials del nou usuari administrador (User, Password, IP)." src="../../images/windowsrdp/2025-10-25_22-06.png" /></p>
 <p>Si comprovem els usuaris que s'han creat, hi ha dos nous usuaris (un d'ells l'administrador remot creat per l'script).</p>
-<p><img alt="Llista d'usuaris locals amb els nous comptes creats per l'script." src="../../images/2025-10-25_22-11.png" /></p>
+<p><img alt="Llista d'usuaris locals amb els nous comptes creats per l'script." src="../../images/windowsrdp/2025-10-25_22-11.png" /></p>
 <p><strong>Prova 3: Connexió Exitosa</strong></p>
 <p>Ens connectem amb un client RDP (en aquest cas, Remmina a Ubuntu) utilitzant les credencials rebudes per Telegram.</p>
-<p><img alt="Connexió RDP amb Remmina utilitzant l'usuari i la contrasenya rebuts al missatge." src="../../images/2025-10-29_17-27.png" /></p>
+<p><img alt="Connexió RDP amb Remmina utilitzant l'usuari i la contrasenya rebuts al missatge." src="../../images/windowsrdp/2025-10-29_17-27.png" /></p>
 <p>I la connexió s'estableix correctament, confirmant l'accés complet.</p>
-<p><img alt="Sessió RDP iniciada correctament al sistema de Windows." src="../../images/2025-10-29_17-28.png" /></p>
+<p><img alt="Sessió RDP iniciada correctament al sistema de Windows." src="../../images/windowsrdp/2025-10-29_17-28.png" /></p>
 <hr />
 <h2 id="finalitat-i-consideracions-etiques">Finalitat i Consideracions Ètiques</h2>
 <p>L’objectiu principal d'aquest projecte és documentar una tècnica de desplegament que permet que el component de control s’instal·li i s’executi de forma autònoma i persistent sense necessitat d’intervenció manual, garantint un control complet des del costat administratiu.</p>

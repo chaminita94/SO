@@ -17,6 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Initialize confetti on reaching end
     initEndConfetti();
+
+    // Initialize image lightbox
+    initLightbox();
+
+    // Initialize copy feedback
+    initCopyFeedback();
 });
 
 /* ========================================================= */
@@ -191,3 +197,119 @@ document.addEventListener("keydown", function (e) {
     }
 });
 
+/* ========================================================= */
+/* IMAGE LIGHTBOX                                             */
+/* ========================================================= */
+
+function initLightbox() {
+    // Create lightbox overlay
+    const overlay = document.createElement("div");
+    overlay.id = "lightbox-overlay";
+
+    const closeBtn = document.createElement("span");
+    closeBtn.id = "lightbox-close";
+    closeBtn.innerHTML = "×";
+
+    const lightboxImg = document.createElement("img");
+    lightboxImg.id = "lightbox-img";
+
+    overlay.appendChild(closeBtn);
+    overlay.appendChild(lightboxImg);
+    document.body.appendChild(overlay);
+
+    // Add click handlers to content images
+    const contentImages = document.querySelectorAll(".md-content img");
+    contentImages.forEach(img => {
+        img.addEventListener("click", function (e) {
+            e.preventDefault();
+            lightboxImg.src = this.src;
+            lightboxImg.alt = this.alt;
+            overlay.classList.add("active");
+            document.body.style.overflow = "hidden";
+        });
+    });
+
+    // Close on overlay click
+    overlay.addEventListener("click", function (e) {
+        if (e.target === overlay || e.target === closeBtn) {
+            overlay.classList.remove("active");
+            document.body.style.overflow = "";
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && overlay.classList.contains("active")) {
+            overlay.classList.remove("active");
+            document.body.style.overflow = "";
+        }
+    });
+}
+
+/* ========================================================= */
+/* COPY CODE FEEDBACK                                         */
+/* ========================================================= */
+
+function initCopyFeedback() {
+    // Create toast element
+    const toast = document.createElement("div");
+    toast.id = "copy-toast";
+    toast.innerHTML = "✓ Codi copiat!";
+    toast.style.cssText = `
+        position: fixed;
+        bottom: 100px;
+        left: 50%;
+        transform: translateX(-50%) translateY(20px);
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 25px;
+        font-size: 14px;
+        font-weight: 500;
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 10000;
+    `;
+    document.body.appendChild(toast);
+
+    // Listen for clipboard events
+    document.addEventListener("click", function (e) {
+        if (e.target.closest(".md-clipboard")) {
+            showToast();
+        }
+    });
+
+    function showToast() {
+        toast.style.opacity = "1";
+        toast.style.visibility = "visible";
+        toast.style.transform = "translateX(-50%) translateY(0)";
+
+        setTimeout(() => {
+            toast.style.opacity = "0";
+            toast.style.visibility = "hidden";
+            toast.style.transform = "translateX(-50%) translateY(20px)";
+        }, 2000);
+    }
+}
+
+/* ========================================================= */
+/* SMOOTH ANCHOR SCROLLING                                    */
+/* ========================================================= */
+
+document.addEventListener("click", function (e) {
+    const anchor = e.target.closest('a[href^="#"]');
+    if (anchor) {
+        const targetId = anchor.getAttribute("href").slice(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+            history.pushState(null, null, "#" + targetId);
+        }
+    }
+});

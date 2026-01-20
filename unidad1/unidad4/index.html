@@ -307,6 +307,26 @@
   
 
       
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ubuntu-ad/" class="md-tabs__link">
+          
+  
+  
+  Integració Ubuntu-AD
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -803,6 +823,148 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Integració Ubuntu-AD
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Integració Ubuntu-AD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducció
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/part1-ubuntu-ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 1: Unió Ubuntu a AD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/part2-iis-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 2: Servidor web IIS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/part3-https-certificats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 3: Certificats HTTPS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -822,16 +984,16 @@
 <h1 id="resposta-a-lincident-backdoor-i-exfiltracio-de-dades">Resposta a l'incident: backdoor i exfiltració de dades</h1>
 <p>Hem fet tasques de <strong>blue team</strong> i <strong>red team</strong>: s'ha executat un codi que ens ha creat una <strong>backdoor</strong> i ha exfiltrat dades crucials del nostre ordinador. Com a administradors de sistema, cal saber detectar i reaccionar ràpidament.</p>
 <p>He creat un script que detecta comportaments estranys a l'equip que estem analitzant (això no garanteix que funcioni en tots els casos). Li he donat permisos d'execució i l'he executat.</p>
-<p><img alt="alt text" src="../../images/2025-10-01_20-11.png" /></p>
+<p><img alt="alt text" src="../../images/deteccio/2025-10-01_20-11.png" /></p>
 <p>Aquesta captura aporta molta informació: hi ha serveis <strong>estranys</strong> en execució, s'ha detectat un usuari amb accés <strong>shell</strong>, hi ha un fitxer <code>authorized_keys</code> sospitós i els fitxers dins de <code>/usr/local/bin</code> han estat modificats durant l'última setmana. Ara que tenim aquestes evidències, podem investigar.</p>
 <p>Fem un <code>cat</code> del <code>authorized_keys</code> per comprovar si conté alguna de les nostres claus; en aquest cas <strong>no</strong> és cap de les nostres i l'hem esborrat.</p>
-<p><img alt="alt text" src="../../images/2025-10-01_20-14.png" /></p>
+<p><img alt="alt text" src="../../images/deteccio/2025-10-01_20-14.png" /></p>
 <p>Posteriorment fem un <code>ls</code> filtrant amb <code>grep</code> per revisar serveis i targets, i també es mostra que n'hi ha tres que no haurien d'estar.</p>
-<p><img alt="alt text" src="../../images/2025-10-01_20-15.png" /></p>
+<p><img alt="alt text" src="../../images/deteccio/2025-10-01_20-15.png" /></p>
 <p>Executem una cerca amb <code>find</code> i l'opció <code>-mtime -7</code> per llistar quins arxius han estat creats o modificats durant els últims dies dins de <code>/usr/local/bin</code>.</p>
-<p><img alt="alt text" src="../../images/2025-10-01_20-16.png" /></p>
+<p><img alt="alt text" src="../../images/deteccio/2025-10-01_20-16.png" /></p>
 <p>Finalment, hem trobat un usuari que no hem afegit nosaltres; segons la política d'incidents, el podem <strong>bloquejar</strong> o <strong>esborrar</strong> (prenant abans còpies per evidència).</p>
-<p><img alt="alt text" src="../../images/2025-10-01_20-16_1.png" /></p>
+<p><img alt="alt text" src="../../images/deteccio/2025-10-01_20-16_1.png" /></p>
 <hr />
 <h2 id="observacions-i-bones-practiques-rapides">Observacions i bones pràctiques ràpides</h2>
 <ul>

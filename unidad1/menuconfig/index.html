@@ -307,6 +307,26 @@
   
 
       
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ubuntu-ad/" class="md-tabs__link">
+          
+  
+  
+  Integració Ubuntu-AD
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -850,6 +870,148 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Integració Ubuntu-AD
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Integració Ubuntu-AD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducció
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/part1-ubuntu-ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 1: Unió Ubuntu a AD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/part2-iis-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 2: Servidor web IIS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/part3-https-certificats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 3: Certificats HTTPS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -877,55 +1039,55 @@
 </code></pre></div></p>
 <p>Exemple de sortida:<br />
 6.14.0-35-generic</p>
-<p><img alt="alt text" src="../../images/uname.png" /></p>
+<p><img alt="alt text" src="../../images/menuconfig/uname.png" /></p>
 <hr />
 <h3 id="descarregar-un-kernel-des-de-kernelorg">Descarregar un kernel des de kernel.org</h3>
 <p>Accedim a la pàgina oficial:<br />
 https://cdn.kernel.org/pub/linux/kernel/v6.x/</p>
 <p>En aquest cas descarreguem la versió <strong>6.14.1</strong>.</p>
-<p><img alt="alt text" src="../../images/kernel.png" /></p>
+<p><img alt="alt text" src="../../images/menuconfig/kernel.png" /></p>
 <p>Un cop descarregat, descomprimim el fitxer:</p>
-<p><img alt="alt text" src="../../images/kernel1.png" /></p>
+<p><img alt="alt text" src="../../images/menuconfig/kernel1.png" /></p>
 <hr />
 <h3 id="configuracio-amb-make-menuconfig">Configuració amb <code>"make menuconfig"</code></h3>
 <p>Ens situem dins del directori del kernel que hem descarregat i executem:<br />
 <div class="highlight"><pre><span></span><code>make menuconfig
 </code></pre></div></p>
 <p>Aquesta ordre obrirà la interfície de configuració en mode text, on podem activar o desactivar opcions del kernel segons les nostres necessitats.</p>
-<p><img alt="alt text" src="../../images/2025-11-26_16-19.png" /></p>
+<p><img alt="alt text" src="../../images/menuconfig/2025-11-26_16-19.png" /></p>
 <p>En el meu cas, he decidit desactivar el <strong>Ethernet driver support</strong> i com el nostre driver es el de Intel el desactivem, deixant el kernel sense suport de xarxa:</p>
-<p><img alt="alt text" src="../../images/2025-11-26_18-58.png" /></p>
+<p><img alt="alt text" src="../../images/menuconfig/2025-11-26_18-58.png" /></p>
 <p>També he desactivat:</p>
 <ul>
 <li><strong>Sound card support</strong></li>
 <li><strong>USB support</strong></li>
 </ul>
 <p>Això permet demostrar clarament els efectes dels canvis després de la compilació, ja que el sistema no detectarà USBs, ni àudio, ni interfícies de xarxa.</p>
-<p><img alt="alt text" src="../../images/2025-11-26_16-22.png" /></p>
+<p><img alt="alt text" src="../../images/menuconfig/2025-11-26_16-22.png" /></p>
 <p>Quan acabem de modificar les opcions, guardem la configuració i sortim del menú:</p>
-<p><img alt="alt text" src="../../images/2025-11-26_16-23.png" /></p>
-<p><img alt="alt text" src="../../images/2025-11-26_16-23_1.png" /></p>
+<p><img alt="alt text" src="../../images/menuconfig/2025-11-26_16-23.png" /></p>
+<p><img alt="alt text" src="../../images/menuconfig/2025-11-26_16-23_1.png" /></p>
 <hr />
 <h3 id="compilacio-del-kernel">Compilació del kernel</h3>
 <p>Finalment, procedim a compilar el kernel amb la comanda:
 <div class="highlight"><pre><span></span><code>sudo make -j$(nproc)
 </code></pre></div>
 Aquesta ordre utilitza tots els nuclis disponibles per accelerar la compilació. El procés pot trigar entre <strong>30 minuts i 4 hores</strong>, depenent de la potència de la màquina o màquina virtual.</p>
-<p><img alt="alt text" src="../../images/2025-11-26_16-24.png" /></p>
+<p><img alt="alt text" src="../../images/menuconfig/2025-11-26_16-24.png" /></p>
 <h3 id="installacio-del-kernel-compilat">Instal·lació del kernel compilat</h3>
 <p>Un cop completada la compilació, només queda instal·lar el nou kernel i deixar-lo llest per utilitzar al sistema.</p>
 <hr />
 <p><strong>Instal·lar els mòduls del kernel</strong></p>
 <p>Primer executem la comanda <code>sudo make modules_install</code> i esperem que els mòduls es copiïn al directori corresponent:</p>
 <p><code>/lib/modules/&lt;versió_del_kernel&gt;</code></p>
-<p><img alt="alt text" src="../../images/2025-11-26_17-18.png" /></p>
+<p><img alt="alt text" src="../../images/menuconfig/2025-11-26_17-18.png" /></p>
 <hr />
 <p><strong>Generar els paquets <code>.deb</code></strong></p>
 <p>Per crear els paquets Debian del kernel utilitzarem la comanda <code>sudo make bindeb-pkg</code>.<br />
 Aquesta ordre empaqueta el kernel, els headers i les llibreries necessàries en fitxers <code>.deb</code>, que es generen un directori per sobre (<code>../</code>).</p>
-<p><img alt="alt text" src="../../images/2025-11-26_17-20.png" /></p>
+<p><img alt="alt text" src="../../images/menuconfig/2025-11-26_17-20.png" /></p>
 <p>Quan acabi el procés, podrem veure els arxius <code>.deb</code> generats:</p>
-<p><img alt="alt text" src="../../images/2025-11-26_17-24.png" /></p>
+<p><img alt="alt text" src="../../images/menuconfig/2025-11-26_17-24.png" /></p>
 <hr />
 <p><strong>Instal·lar els paquets del kernel</strong></p>
 <p>Instal·lem els paquets amb les ordres:</p>
@@ -938,15 +1100,15 @@ Aquesta ordre empaqueta el kernel, els headers i les llibreries necessàries en 
 </li>
 </ul>
 <p>Això instal·larà el nostre kernel personalitzat i tots els fitxers necessaris per al seu funcionament.</p>
-<p><img alt="alt text" src="../../images/2025-11-26_17-25.png" /></p>
-<p><img alt="alt text" src="../../images/2025-11-26_17-25_1.png" /></p>
+<p><img alt="alt text" src="../../images/menuconfig/2025-11-26_17-25.png" /></p>
+<p><img alt="alt text" src="../../images/menuconfig/2025-11-26_17-25_1.png" /></p>
 <hr />
 <p><strong>Actualitzar GRUB i reiniciar</strong></p>
 <p>Perquè el sistema reconegui el nou kernel, actualitzem GRUB amb la comanda <code>sudo update-grub</code>.</p>
 <p>Finalment, reiniciem l’equip amb <code>sudo reboot</code>.</p>
 <p>Després de reiniciar, podrem seleccionar el nostre kernel personalitzat des del menú d’opcions avançades de GRUB.</p>
 <p>Quan el sistema es reinicia podrem observar si s'ha aplicat, l'àudio per algun motiu no s'ha desactivat però sí la xarxa.</p>
-<p><img alt="alt text" src="../../images/2025-11-26_18-35.png" /></p>
+<p><img alt="alt text" src="../../images/menuconfig/2025-11-26_18-35.png" /></p>
 
 
 

@@ -307,6 +307,26 @@
   
 
       
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ubuntu-ad/" class="md-tabs__link">
+          
+  
+  
+  Integració Ubuntu-AD
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -913,6 +933,148 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Integració Ubuntu-AD
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Integració Ubuntu-AD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducció
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/part1-ubuntu-ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 1: Unió Ubuntu a AD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/part2-iis-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 2: Servidor web IIS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/part3-https-certificats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 3: Certificats HTTPS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -958,15 +1120,15 @@
 'uname -r'</p>
 <p>Exemple:<br />
 6.14.0-35-generic</p>
-<p><img alt="alt text" src="../../images/uname.png" /></p>
+<p><img alt="alt text" src="../../images/kernel/uname.png" /></p>
 <hr />
 <h2 id="descarregar-un-kernel-de-kernelorg">Descarregar un kernel de kernel.org</h2>
 <p>Accedim a la pàgina:
 https://cdn.kernel.org/pub/linux/kernel/v6.x/</p>
 <p>Descarreguem, per exemple, la versió 6.14.1.</p>
-<p><img alt="alt text" src="../../images/kernel.png" /></p>
+<p><img alt="alt text" src="../../images/kernel/kernel.png" /></p>
 <p>Descomprimim el fitxer.</p>
-<p><img alt="alt text" src="../../images/kernel1.png" /></p>
+<p><img alt="alt text" src="../../images/kernel/kernel1.png" /></p>
 <hr />
 <h2 id="preparar-el-sistema-per-compilar">Preparar el sistema per compilar</h2>
 <p>Paquets necessaris:
@@ -983,20 +1145,20 @@ deb-src http://archive.ubuntu.com/ubuntu noble-updates main restricted universe 
 deb-src http://archive.ubuntu.com/ubuntu noble-security main restricted universe multiverse</p>
 <p>Descomentem línies i fem:
 'apt update'</p>
-<p><img alt="alt text" src="../../images/sour.png" /></p>
+<p><img alt="alt text" src="../../images/kernel/sour.png" /></p>
 <hr />
 <h2 id="modificar-el-codi-font-del-kernel">Modificar el codi font del kernel</h2>
 <p>Fem una còpia de main.c per no tocar l’original.</p>
-<p><img alt="alt text" src="../../images/2025-11-19_18-51.png" /></p>
+<p><img alt="alt text" src="../../images/kernel/2025-11-19_18-51.png" /></p>
 <p>Afegim una línia nova:
 pr_notice("hola exemple");</p>
-<p><img alt="alt text" src="../../images/2025-11-19_18-56.png" /></p>
+<p><img alt="alt text" src="../../images/kernel/2025-11-19_18-56.png" /></p>
 <hr />
 <h2 id="crear-un-parche-amb-diff">Crear un parche amb diff</h2>
 <p>Fem un diff entre el fitxer original i el modificat:
 'diff -u fitxer_original fitxer_modificat'</p>
 <p>Això genera un <code>.patch</code> amb només els canvis.</p>
-<p><img alt="alt text" src="../../images/2025-11-19_19-01.png" /></p>
+<p><img alt="alt text" src="../../images/kernel/2025-11-19_19-01.png" /></p>
 <hr />
 <h2 id="copiar-el-config-del-kernel-actual">Copiar el <code>.config</code> del kernel actual</h2>
 <p>A /boot hi ha la configuració dels kernels instal·lats:</p>
@@ -1007,13 +1169,13 @@ System.map-6.14.0-32-generic<br />
 vmlinuz-6.14.0-34-generic<br />
 initrd.img-6.14.0-34-generic  </p>
 <p>Copiem el <code>.config</code> que sabem que funciona dins el directori del kernel nou.</p>
-<p><img alt="alt text" src="../../images/2025-11-19_19-08_1.png" /></p>
+<p><img alt="alt text" src="../../images/kernel/2025-11-19_19-08_1.png" /></p>
 <hr />
 <h2 id="reconfigurar-el-kernel-amb-oldconfig">Reconfigurar el kernel amb oldconfig</h2>
 <p>Executem:
 'make oldconfig'</p>
 <p>Només preguntarà opcions noves que no existien a la versió anterior.</p>
-<p><img alt="alt text" src="../../images/2025-11-19_19-09.png" /></p>
+<p><img alt="alt text" src="../../images/kernel/2025-11-19_19-09.png" /></p>
 <hr />
 <h2 id="activar-i-desactivar-opcions-del-kernel">Activar i desactivar opcions del kernel</h2>
 <p>Editem <code>.config</code> i canviem:
@@ -1021,31 +1183,31 @@ initrd.img-6.14.0-34-generic  </p>
 - M = compilat com a mòdul
 - N = desactivat</p>
 <p>Podem activar o desactivar drivers i funcionalitats segons necessitat.</p>
-<p><img alt="alt text" src="../../images/2025-11-19_19-12.png" /></p>
+<p><img alt="alt text" src="../../images/kernel/2025-11-19_19-12.png" /></p>
 <hr />
 <h2 id="editar-grub-per-mostrar-el-menu">Editar GRUB per mostrar el menú</h2>
 <p>A /etc/default/grub comentem:
 GRUB_TIMEOUT_STYLE=hidden<br />
 GRUB_TIMEOUT=0  </p>
 <p>Així mostrarem el menú de GRUB en arrencar.</p>
-<p><img alt="alt text" src="../../images/2025-11-19_19-19.png" /></p>
+<p><img alt="alt text" src="../../images/kernel/2025-11-19_19-19.png" /></p>
 <p>Actualitzem el GRUB:
 'update-grub'</p>
-<p><img alt="alt text" src="../../images/2025-11-19_19-18.png" /></p>
+<p><img alt="alt text" src="../../images/kernel/2025-11-19_19-18.png" /></p>
 <hr />
 <h2 id="installacio-del-kernel-compilat">Instal·lació del kernel compilat</h2>
 <p>Després d’esperar unes 3 o 4 hores, el nostre kernel finalment ha acabat la compilació!</p>
-<p><img alt="alt text" src="../../images/compilat.png" /></p>
+<p><img alt="alt text" src="../../images/kernel/compilat.png" /></p>
 <p>Un cop generats els paquets <code>.deb</code>, procedim a instal·lar-los:</p>
-<p><img alt="alt text" src="../../images/image%20copy%207.png" /></p>
+<p><img alt="alt text" src="../../images/kernel/image%20copy%207.png" /></p>
 <p>Després instal·lem el kernel i els headers i actualitzem el GRUB amb la comanda:
 'update-grub'</p>
-<p><img alt="alt text" src="../../images/image%20copy%208.png" /></p>
+<p><img alt="alt text" src="../../images/kernel/image%20copy%208.png" /></p>
 <p>Quan reiniciem el sistema, al menú d’arrencada ja ens apareix el nostre kernel personalitzat i compilat manualment.</p>
-<p><img alt="alt text" src="../../images/image%20copy%209.png" /></p>
+<p><img alt="alt text" src="../../images/kernel/image%20copy%209.png" /></p>
 <p>Per comprovar que el nostre canvi amb <code>pr_notice()</code> funciona realment dins del kernel, utilitzem l’eina <code>dmesg</code> per mostrar els missatges generats durant l’arrencada. Si el nostre kernel personalitzat s’ha compilat i carregat correctament, el missatge apareixerà al log:</p>
 <p>dmesg | grep -i hola</p>
-<p><img alt="alt text" src="../../images/image%20copy%2010.png" /></p>
+<p><img alt="alt text" src="../../images/kernel/image%20copy%2010.png" /></p>
 <p>Sortida:</p>
 <p>[    0.023581] hola vitaliy.</p>
 <p>Això confirma que el codi modificat forma part del kernel i que s’executa durant el procés d’arrencada.</p>

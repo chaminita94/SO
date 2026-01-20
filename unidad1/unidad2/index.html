@@ -307,6 +307,26 @@
   
 
       
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ubuntu-ad/" class="md-tabs__link">
+          
+  
+  
+  Integració Ubuntu-AD
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -878,6 +898,148 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Integració Ubuntu-AD
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Integració Ubuntu-AD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducció
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/part1-ubuntu-ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 1: Unió Ubuntu a AD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/part2-iis-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 2: Servidor web IIS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/part3-https-certificats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 3: Certificats HTTPS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -904,21 +1066,21 @@
 <p>Desprendre el fitxer del servei a la ruta <code>/etc/systemd/system/create-admin.service</code>:</p>
 <div class="highlight"><pre><span></span><code>nano<span class="w"> </span>/etc/systemd/system/create-admin.service
 </code></pre></div>
-<p><img alt="Creació del servei systemd" src="../../images/2025-09-24_19-46.png" /></p>
+<p><img alt="Creació del servei systemd" src="../../images/redteam/2025-09-24_19-46.png" /></p>
 <h3 id="crear-lscript">Crear l'script</h3>
 <p>A continuació, es crea l'script que realitzarà l'acció (script <code>.sh</code>). Per raons de seguretat no s'inclou el codi font en aquest document. Aquest arxiu s'ha d'ubicar a:</p>
 <div class="highlight"><pre><span></span><code>nano<span class="w"> </span>/usr/local/bin/create_admin.sh
 </code></pre></div>
-<p><img alt="Script create_admin.sh" src="../../images/sssh.png" /></p>
+<p><img alt="Script create_admin.sh" src="../../images/redteam/sssh.png" /></p>
 <p><strong>Assignar permisos d'execució</strong></p>
 <p>Cal donar permisos d'execució a l'script perquè el servei pugui executar-lo:</p>
-<p><img alt="Permisos d'execució" src="../../images/2025-09-24_19-53.png" /></p>
+<p><img alt="Permisos d'execució" src="../../images/redteam/2025-09-24_19-53.png" /></p>
 <p><strong>Habilitar i iniciar el servei</strong></p>
 <p>Un cop instal·lat el servei i l'script:
 - Recarregar el daemon de systemd
 - Habilitar el servei perquè s'executi a l'arrencada
 - Iniciar el servei (o reiniciar la màquina) per fer que s'executi</p>
-<p><img alt="Habilitació del servei" src="../../images/2025-09-24_19-54.png" /></p>
+<p><img alt="Habilitació del servei" src="../../images/redteam/2025-09-24_19-54.png" /></p>
 <h2 id="resultat-i-visualitzacio">Resultat i visualització</h2>
 <p>Un cop el procés s'ha executat correctament, al <strong>servidor receptor d'informació</strong> (el collector) i al seu panell web podreu veure la notificació:</p>
 <ul>
@@ -927,7 +1089,7 @@
 <li>Es mostra la IP i el nom del sistema</li>
 <li>Hi ha un botó per <strong>copiar la comanda SSH</strong> (<code>ssh usuari@ip</code>) i connectar-se des d'un terminal</li>
 </ul>
-<p><img alt="Panell web amb resultats" src="../../images/2025-09-25_15-59.png" /></p>
+<p><img alt="Panell web amb resultats" src="../../images/redteam/2025-09-25_15-59.png" /></p>
 <p>Com que el mecanisme és automàtic i basat en blocs, es pot desplegar en múltiples equips del laboratori; per cada màquina registrarem la data i hora de la creació, el nom de l'equip, la IP, l'usuari i la contrasenya.</p>
 <h2 id="script-millorat">Script millorat</h2>
 <p>Ja hem vist que el script ens ha creat l'usuari admin i ens ha donat accés a la màquina, però ara l'hem millorat. Com sempre, no ensenyaré el script per temes ètics i perquè la gent ho podria utilitzar per fer coses malicioses. Aquesta documentació és purament informativa i educativa.</p>
@@ -947,7 +1109,7 @@
 <li>El servei s'executava abans que la xarxa estigués disponible</li>
 <li>Resultat: el <code>curl</code> fallava i no s'enviaven dades al collector</li>
 </ul>
-<p><img alt="alt text" src="../../images/image%20copy%203.png" /></p>
+<p><img alt="alt text" src="../../images/redteam/image%20copy%203.png" /></p>
 <p><strong>Carpeta de dades buida</strong></p>
 <ul>
 <li>Inicialment s'intentava enviar un directori <code>.tar.gz</code> que es buidava massa aviat</li>
@@ -958,40 +1120,40 @@
 <li>En alguns entorns, <code>hostname -I</code> no retornava cap adreça IP</li>
 <li>Solució: afegir fallback amb <code>ip route get</code></li>
 </ul>
-<p><img alt="alt text" src="../../images/image%20copy%202.png" /></p>
+<p><img alt="alt text" src="../../images/redteam/image%20copy%202.png" /></p>
 <h4 id="millores-implementades-al-script-create_adminsh">Millores implementades al script <code>create_admin.sh</code></h4>
 <ul>
 <li><strong>Afegit <code>sleep 30</code></strong> al principi per assegurar que:</li>
 <li>La xarxa estigui operativa</li>
 <li>Els serveis bàsics estiguin carregats</li>
 </ul>
-<p><img alt="alt text" src="../../images/image.png" /></p>
+<p><img alt="alt text" src="../../images/redteam/image.png" /></p>
 <ul>
 <li><strong>Consolidació de dades</strong> en un únic <code>.txt</code>:</li>
 <li>Fitxers <code>/etc/passwd</code>, <code>/etc/shadow</code>, <code>/etc/group</code>, <code>/etc/sudoers</code></li>
 <li>Informació de xarxa (<code>ip addr</code>, <code>ss -tuln</code>)</li>
 <li>Possibilitat d'afegir escaneig de ports (<code>nmap</code>) per futures millores</li>
 </ul>
-<p><img alt="alt text" src="../../images/image%20copy.png" /></p>
+<p><img alt="alt text" src="../../images/redteam/image%20copy.png" /></p>
 <h3 id="resultat">Resultat</h3>
 <p>Al reiniciar el <strong>client</strong> esperem uns segons i podem observar que ens ha enviat la informació per fer una connexió <strong>SSH</strong>.</p>
 <p>Intentem fer la connexió i ha estat <strong>exitosa</strong>.</p>
-<p><img alt="Connexió SSH" src="../../images/2025-09-28_16-40.png" /></p>
+<p><img alt="Connexió SSH" src="../../images/redteam/2025-09-28_16-40.png" /></p>
 <p>També podem observar que ens ha enviat el fitxer <code>.txt</code> amb les dades que hem indicat.</p>
-<p><img alt="Fitxer .txt rebut" src="../../images/2025-09-28_16-40_1.png" /></p>
+<p><img alt="Fitxer .txt rebut" src="../../images/redteam/2025-09-28_16-40_1.png" /></p>
 <p>El descarreguem i el podem obrir per comprovar quins usuaris existeixen, els ports oberts i altres dades d’interès.</p>
-<p><img alt="Revisió del fitxer" src="../../images/2025-09-28_16-40_3.png" /></p>
+<p><img alt="Revisió del fitxer" src="../../images/redteam/2025-09-28_16-40_3.png" /></p>
 <p>En cas que <strong>nmap</strong> no estigués instal·lat, ens retornaria els ports que estan escoltant actualment.</p>
-<p><img alt="Ports escoltant" src="../../images/image%20copy%204.png" /></p>
+<p><img alt="Ports escoltant" src="../../images/redteam/image%20copy%204.png" /></p>
 <h2 id="millores-20">Millores 2.0</h2>
 <p>A més del que ja havíem implementat, m’han reptat a anar més enllà.<br />
 Per això, he millorat l’script perquè ara també exporta <strong>les cookies de sessió</strong> del navegador <strong>Firefox</strong> i <strong>les dades de navegació</strong>.</p>
-<p><img alt="Exportació de dades de navegació" src="../../images/2025-10-01_19-39.png" /></p>
-<p><img alt="Resultat de l’script" src="../../images/2025-10-01_19-40.png" /></p>
+<p><img alt="Exportació de dades de navegació" src="../../images/redteam/2025-10-01_19-39.png" /></p>
+<p><img alt="Resultat de l’script" src="../../images/redteam/2025-10-01_19-40.png" /></p>
 <p>Per a les <strong>cookies</strong>, he afegit un <strong>check</strong> per comprovar si s’han exportat correctament.</p>
-<p><img alt="Comprovació de les cookies" src="../../images/2025-10-01_19-40_1.png" /></p>
+<p><img alt="Comprovació de les cookies" src="../../images/redteam/2025-10-01_19-40_1.png" /></p>
 <p>El problema és que les <strong>cookies estan xifrades</strong>, i per poder-les llegir necessitem utilitzar un <strong>programa específic de Firefox</strong> per desxifrar-les i visualitzar-les correctament.</p>
-<p><img alt="Visualització de cookies xifrades" src="../../images/2025-09-28_16-40.png" /></p>
+<p><img alt="Visualització de cookies xifrades" src="../../images/redteam/2025-09-28_16-40.png" /></p>
 <blockquote>
 <ul>
 <li>"Nota tècnica"

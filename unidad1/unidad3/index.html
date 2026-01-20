@@ -307,6 +307,26 @@
   
 
       
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ubuntu-ad/" class="md-tabs__link">
+          
+  
+  
+  Integració Ubuntu-AD
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -850,6 +870,148 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Integració Ubuntu-AD
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Integració Ubuntu-AD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducció
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/part1-ubuntu-ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 1: Unió Ubuntu a AD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/part2-iis-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 2: Servidor web IIS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/part3-https-certificats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 3: Certificats HTTPS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -880,11 +1042,11 @@ El seu objectiu és aconseguir un <strong>estat determinat del sistema</strong> 
 <hr />
 <h3 id="creacio-del-target-lab-admin-setuptarget">Creació del <em>target</em> <code>lab-admin-setup.target</code></h3>
 <p>Hem creat el <em>target</em> personalitzat anomenat <strong><code>lab-admin-setup.target</code></strong>.</p>
-<p><img alt="Creació del target personalitzat" src="../../images/2025-10-01_19-44_1.png" /></p>
+<p><img alt="Creació del target personalitzat" src="../../images/target/2025-10-01_19-44_1.png" /></p>
 <hr />
 <h3 id="creacio-del-servei-associat">Creació del servei associat</h3>
 <p>S’ha creat el fitxer <strong><code>/etc/systemd/system/create-admin.service</code></strong>, el qual està vinculat al nostre <em>target</em> personalitzat.</p>
-<p><img alt="Fitxer del servei personalitzat" src="../../images/2025-10-01_19-44.png" /></p>
+<p><img alt="Fitxer del servei personalitzat" src="../../images/target/2025-10-01_19-44.png" /></p>
 <hr />
 <h3 id="assignacio-del-target-com-a-predeterminat">Assignació del <em>target</em> com a predeterminat</h3>
 <p>A continuació s’han executat les ordres per comprovar i establir el <em>target</em> per defecte:</p>
@@ -893,12 +1055,12 @@ El seu objectiu és aconseguir un <strong>estat determinat del sistema</strong> 
 <li>Establir el nou <em>target</em> com a predeterminat amb <code>systemctl set-default lab-admin-setup.target</code>.  </li>
 <li>Tornar a comprovar que el canvi s’ha aplicat correctament.</li>
 </ol>
-<p><img alt="Canvi del target per defecte" src="../../images/2025-10-01_19-12.png" /></p>
+<p><img alt="Canvi del target per defecte" src="../../images/target/2025-10-01_19-12.png" /></p>
 <hr />
 <h3 id="absencia-dinterficie-grafica">Absència d’interfície gràfica</h3>
 <p>En iniciar la sessió és possible que no aparegui la interfície gràfica, ja que el <em>target</em> personalitzat no carrega el mode gràfic per defecte.<br />
 Per solucionar-ho, es pot canviar al <em>target</em> gràfic predeterminat.</p>
-<p><img alt="Canvi al graphical target" src="../../images/image%20copy%205.png" /></p>
+<p><img alt="Canvi al graphical target" src="../../images/target/image%20copy%205.png" /></p>
 <hr />
 <blockquote>
 <p>"Nota tècnica"

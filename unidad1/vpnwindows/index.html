@@ -16,6 +16,8 @@
         <link rel="prev" href="../menuconfig/">
       
       
+        <link rel="next" href="../../ubuntu-ad/">
+      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
@@ -298,6 +300,26 @@
   
   
   VPN Windows
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ubuntu-ad/" class="md-tabs__link">
+          
+  
+  
+  Integració Ubuntu-AD
 
         </a>
       </li>
@@ -966,6 +988,148 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Integració Ubuntu-AD
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Integració Ubuntu-AD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducció
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/part1-ubuntu-ad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 1: Unió Ubuntu a AD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/part2-iis-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 2: Servidor web IIS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-ad/part3-https-certificats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 3: Certificats HTTPS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1022,45 +1186,45 @@
 <li><strong>Interfície interna:</strong> <code>192.168.2.0/24</code></li>
 <li><strong>Dos discos durs</strong> (un pel sistema, un per dades)</li>
 </ul>
-<p><img alt="Infraestructura del servidor" src="../../images/2025-12-10_17-51_1.png" /></p>
+<p><img alt="Infraestructura del servidor" src="../../images/vpnwindows/2025-12-10_17-51_1.png" /></p>
 <h3 id="configuracio-dadreces-ip">Configuració d'adreces IP</h3>
 <p>Assignem adreces IP estàtiques a les dues interfícies:</p>
-<p><img alt="Configuració IP externa" src="../../images/2025-12-10_18-46.png" /></p>
-<p><img alt="Configuració IP interna" src="../../images/2025-12-10_18-46_1.png" /></p>
+<p><img alt="Configuració IP externa" src="../../images/vpnwindows/2025-12-10_18-46.png" /></p>
+<p><img alt="Configuració IP interna" src="../../images/vpnwindows/2025-12-10_18-46_1.png" /></p>
 <hr />
 <h2 id="installacio-dels-rols-necessaris">Instal·lació dels rols necessaris</h2>
 <p>Des del <strong>Server Manager</strong>, accedim a <strong>Agregar rols i característiques</strong>:</p>
-<p><img alt="Server Manager" src="../../images/image%20copy%2011.png" /></p>
-<p><img alt="Assistent de rols" src="../../images/image%20copy%2012.png" /></p>
-<p><img alt="Pantalla inicial" src="../../images/2025-12-10_18-28.png" /></p>
+<p><img alt="Server Manager" src="../../images/vpnwindows/image%20copy%2011.png" /></p>
+<p><img alt="Assistent de rols" src="../../images/vpnwindows/image%20copy%2012.png" /></p>
+<p><img alt="Pantalla inicial" src="../../images/vpnwindows/2025-12-10_18-28.png" /></p>
 <h3 id="rols-a-installar">Rols a instal·lar</h3>
 <ul>
 <li><strong>Active Directory Domain Services</strong></li>
 <li><strong>Network Policy and Access Services</strong></li>
 <li><strong>Remote Access</strong></li>
 </ul>
-<p><img alt="Selecció de rols" src="../../images/2025-12-10_19-11.png" /></p>
+<p><img alt="Selecció de rols" src="../../images/vpnwindows/2025-12-10_19-11.png" /></p>
 <p>Dins de Remote Access, activem:</p>
 <ul>
 <li><strong>DirectAccess and VPN</strong></li>
 <li><strong>Routing</strong></li>
 </ul>
-<p><img alt="Característiques de Remote Access" src="../../images/2025-12-10_19-11_1.png" /></p>
+<p><img alt="Característiques de Remote Access" src="../../images/vpnwindows/2025-12-10_19-11_1.png" /></p>
 <hr />
 <h2 id="configuracio-de-rras-routing-and-remote-access">Configuració de RRAS (Routing and Remote Access)</h2>
 <p>Obrim <strong>Enrutament i accés remot</strong>, fem clic dret sobre el servidor i iniciem la configuració:</p>
-<p><img alt="RRAS" src="../../images/2025-12-10_19-16.png" /></p>
+<p><img alt="RRAS" src="../../images/vpnwindows/2025-12-10_19-16.png" /></p>
 <p>Seleccionem <strong>Accés remot</strong>:</p>
-<p><img alt="Opció accés remot" src="../../images/2025-12-10_19-16_1.png" /></p>
+<p><img alt="Opció accés remot" src="../../images/vpnwindows/2025-12-10_19-16_1.png" /></p>
 <p>Triem <strong>VPN</strong>:</p>
-<p><img alt="Selecció VPN" src="../../images/2025-12-10_19-17.png" /></p>
+<p><img alt="Selecció VPN" src="../../images/vpnwindows/2025-12-10_19-17.png" /></p>
 <p>Indiquem la interfície <strong>externa</strong> (<code>10.10.1.1</code>):</p>
-<p><img alt="Interfície externa" src="../../images/2025-12-10_19-17_1.png" /></p>
+<p><img alt="Interfície externa" src="../../images/vpnwindows/2025-12-10_19-17_1.png" /></p>
 <p>Configurem el <strong>pool d'adreces IP</strong> per als clients VPN:</p>
-<p><img alt="Pool d'adreces" src="../../images/image.png" /></p>
+<p><img alt="Pool d'adreces" src="../../images/vpnwindows/image.png" /></p>
 <h3 id="configuracio-de-ports-pptp">Configuració de ports PPTP</h3>
 <p>És essencial configurar els ports PPTP. A <strong>Ports</strong>, fem clic dret i assignem <strong>10 ports disponibles</strong>:</p>
-<p><img alt="Ports PPTP" src="../../images/2025-12-11_17-25.png" /></p>
+<p><img alt="Ports PPTP" src="../../images/vpnwindows/2025-12-11_17-25.png" /></p>
 <hr />
 <h2 id="creacio-dusuaris">Creació d'usuaris</h2>
 <p>Creem dos usuaris de prova:</p>
@@ -1068,9 +1232,9 @@
 <li><strong>Vitaliy</strong></li>
 <li><strong>Anna</strong></li>
 </ul>
-<p><img alt="Usuaris creats" src="../../images/image%20copy%2013.png" /></p>
+<p><img alt="Usuaris creats" src="../../images/vpnwindows/image%20copy%2013.png" /></p>
 <p>A cada usuari activem <strong>Allow remote access</strong>:</p>
-<p><img alt="Permisos d'accés remot" src="../../images/2025-12-10_19-26.png" /></p>
+<p><img alt="Permisos d'accés remot" src="../../images/vpnwindows/2025-12-10_19-26.png" /></p>
 <hr />
 <h2 id="carpetes-compartides">Carpetes compartides</h2>
 <p>Al disc secundari, creem directoris personals amb permisos individuals:</p>
@@ -1092,32 +1256,32 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="Carpetes creades" src="../../images/image%20copy%2014.png" /></p>
-<p><img alt="Permisos de carpetes" src="../../images/image%20copy%2017.png" /></p>
+<p><img alt="Carpetes creades" src="../../images/vpnwindows/image%20copy%2014.png" /></p>
+<p><img alt="Permisos de carpetes" src="../../images/vpnwindows/image%20copy%2017.png" /></p>
 <hr />
 <h2 id="configuracio-del-client-vpn">Configuració del client VPN</h2>
 <p>Al client Windows, afegim dues connexions VPN:</p>
 <p><strong>Connexió de Vitaliy:</strong></p>
-<p><img alt="VPN Vitaliy" src="../../images/image%20copy%2015.png" /></p>
+<p><img alt="VPN Vitaliy" src="../../images/vpnwindows/image%20copy%2015.png" /></p>
 <p><strong>Connexió d'Anna:</strong></p>
-<p><img alt="VPN Anna" src="../../images/image%20copy%2016.png" /></p>
+<p><img alt="VPN Anna" src="../../images/vpnwindows/image%20copy%2016.png" /></p>
 <hr />
 <h2 id="comprovacions">Comprovacions</h2>
 <h3 id="connexio-vpn-establerta">Connexió VPN establerta</h3>
 <p>Ens connectem amb l'usuari <strong>Anna</strong>:</p>
-<p><img alt="Connexió establerta" src="../../images/2025-12-11_18-59.png" /></p>
+<p><img alt="Connexió establerta" src="../../images/vpnwindows/2025-12-11_18-59.png" /></p>
 <p>L'adreça IP del client ha canviat correctament:</p>
-<p><img alt="Nova IP" src="../../images/2025-12-11_17-21.png" /></p>
+<p><img alt="Nova IP" src="../../images/vpnwindows/2025-12-11_17-21.png" /></p>
 <h3 id="acces-a-recursos-compartits">Accés a recursos compartits</h3>
 <p>Anna pot accedir al seu directori:</p>
-<p><img alt="Accés permès" src="../../images/image%20copy%2018.png" /></p>
+<p><img alt="Accés permès" src="../../images/vpnwindows/image%20copy%2018.png" /></p>
 <p>Però <strong>no pot accedir al directori de Vitaliy</strong> (permisos denegats):</p>
-<p><img alt="Accés denegat" src="../../images/image%20copy%2019.png" /></p>
+<p><img alt="Accés denegat" src="../../images/vpnwindows/image%20copy%2019.png" /></p>
 <hr />
 <h2 id="monitoratge">Monitoratge</h2>
 <p>Des del servidor, a <strong>Clients d'accés remot</strong>, podem veure les connexions actives:</p>
-<p><img alt="Sessions actives - Vista 1" src="../../images/image%20copy%2020.png" /></p>
-<p><img alt="Sessions actives - Vista 2" src="../../images/2025-12-11_17-24.png" /></p>
+<p><img alt="Sessions actives - Vista 1" src="../../images/vpnwindows/image%20copy%2020.png" /></p>
+<p><img alt="Sessions actives - Vista 2" src="../../images/vpnwindows/2025-12-11_17-24.png" /></p>
 
 
 
