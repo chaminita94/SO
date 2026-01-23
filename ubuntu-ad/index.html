@@ -872,6 +872,72 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#arquitectura-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arquitectura del Sistema
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arquitectura del Sistema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flux-dautenticacio-client-windows-vs-client-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flux d'autenticació: Client Windows vs Client Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flux d&#39;autenticació: Client Windows vs Client Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#client-windows-automatic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Client Windows (Automàtic)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-linux-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Client Linux (Manual)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-de-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama de components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resum-windows-automatic-vs-linux-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resum: Windows (Automàtic) vs Linux (Manual)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#contingut-de-la-guia" class="md-nav__link">
     <span class="md-ellipsis">
       Contingut de la Guia
@@ -991,7 +1057,94 @@
 
 
 <h1 id="introduccio-unio-dubuntu-a-active-directory-https">Introducció: Unió d'Ubuntu a Active Directory + HTTPS</h1>
-<p>Aquesta documentació detalla el procés complet de configuració d'un entorn d'integració entre <strong>Ubuntu Desktop</strong> i <strong>Windows Server Active Directory</strong>. El projecte es divideix en tres fases principals que cobreixen des de la unió al domini fins a la seguretat web amb HTTPS.</p>
+<p>Aquesta documentació detalla el procés complet de configuració d'un entorn d'integració entre <strong>Ubuntu Desktop</strong> i <strong>Windows Server Active Directory</strong>. El projecte es divideix en tres fases principals que cobreixen des de la unió al domini fins a la seguretat web amb HTTPS i SSO multiplataforma.</p>
+<h2 id="arquitectura-del-sistema">Arquitectura del Sistema</h2>
+<h3 id="flux-dautenticacio-client-windows-vs-client-linux">Flux d'autenticació: Client Windows vs Client Linux</h3>
+<p>La diferència principal entre els clients Windows i Linux és com gestionen l'autenticació Kerberos i la confiança dels certificats.</p>
+<h4 id="client-windows-automatic">Client Windows (Automàtic)</h4>
+<pre class="mermaid"><code>sequenceDiagram
+    participant W as Client Windows
+    participant DC as Domain Controller
+    participant IIS as Servidor IIS
+
+    Note over W: Login amb credencials del domini
+    W-&gt;&gt;DC: 1. Autenticació NTLM/Kerberos
+    DC--&gt;&gt;W: 2. TGT (Ticket Granting Ticket)
+    Note over W: TGT guardat automàticament
+
+    W-&gt;&gt;DC: 3. Sol·licitud Service Ticket (IIS)
+    DC--&gt;&gt;W: 4. Service Ticket per IIS
+
+    W-&gt;&gt;IIS: 5. Accés HTTPS + Service Ticket
+    Note over IIS: SSO automàtic!
+    IIS--&gt;&gt;W: 6. Contingut web (usuari autenticat)
+
+    Note over W,IIS: Tot automàtic - zero configuració</code></pre>
+<h4 id="client-linux-manual">Client Linux (Manual)</h4>
+<pre class="mermaid"><code>sequenceDiagram
+    participant L as Client Linux
+    participant DC as Domain Controller
+    participant IIS as Servidor IIS
+
+    Note over L: Login local o kinit manual
+    L-&gt;&gt;L: 1. kinit usuari@VDOMIN.LOCAL
+    L-&gt;&gt;DC: 2. Autenticació Kerberos
+    DC--&gt;&gt;L: 3. TGT (Ticket Granting Ticket)
+    Note over L: klist per verificar tiquet
+
+    Note over L: Importar certificat CA manualment
+    Note over L: Configurar navegador amb --auth-server-whitelist
+
+    L-&gt;&gt;DC: 4. Sol·licitud Service Ticket (IIS)
+    DC--&gt;&gt;L: 5. Service Ticket per IIS
+
+    L-&gt;&gt;IIS: 6. Accés HTTPS + Service Ticket
+    IIS--&gt;&gt;L: 7. Contingut web (usuari autenticat)
+
+    Note over L,IIS: Requereix configuració manual</code></pre>
+<h3 id="diagrama-de-components">Diagrama de components</h3>
+<p>En aquest entorn, el <strong>Windows Server</strong> centralitza tota la infraestructura:</p>
+<pre class="mermaid"><code>graph TB
+    SERVER[Windows Server] --- AD[Active Directory]
+    SERVER --- KDC[Kerberos KDC]
+    SERVER --- CA[CA Enterprise]
+    SERVER --- IIS[IIS Web Server]
+
+    WIN[Client Windows] --&gt;|SSO Automatic| SERVER
+    LIN[Client Linux] -.-&gt;|Manual kinit| SERVER</code></pre>
+<h3 id="resum-windows-automatic-vs-linux-manual">Resum: Windows (Automàtic) vs Linux (Manual)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspecte</th>
+<th>Windows (Domini)</th>
+<th>Linux (Ubuntu)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Confiança CA</strong></td>
+<td>✅ Automàtica (GPO)</td>
+<td>❌ Manual (Importar .crt)</td>
+</tr>
+<tr>
+<td><strong>Tiquet Kerberos</strong></td>
+<td>✅ Automàtic al login</td>
+<td>❌ <code>kinit</code> manual</td>
+</tr>
+<tr>
+<td><strong>SSO navegador</strong></td>
+<td>✅ Transparent</td>
+<td>❌ Whitelist i sessió Kerberos</td>
+</tr>
+<tr>
+<td><strong>Arquitectura</strong></td>
+<td>Integració nativa</td>
+<td>Integració via SSSD/Realmd</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h2 id="contingut-de-la-guia">Contingut de la Guia</h2>
 <ol>
 <li>
@@ -1012,12 +1165,15 @@
 </ul>
 </li>
 <li>
-<p><strong><a href="part3-https-certificats/">Part 3: Certificats HTTPS i Confiança</a></strong></p>
+<p><strong><a href="part3-https-certificats/">Part 3: Certificats HTTPS, SSO i Confiança</a></strong></p>
 <ul>
 <li>Generació de certificats auto-signats.</li>
 <li>Configuració de bindings SSL a IIS.</li>
 <li>Importació de certificats a Ubuntu per garantir la confiança.</li>
 <li>Implementació de CA Enterprise (AD CS).</li>
+<li><strong>Solució de l'error <code>ERR_CERT_COMMON_NAME_INVALID</code></strong> (certificats amb SAN).</li>
+<li><strong>Configuració SSO (Single Sign-On) a Windows i Linux</strong>.</li>
+<li>⚠️ <strong>Limitacions del SSO a Linux</strong>.</li>
 </ul>
 </li>
 </ol>
@@ -1083,6 +1239,8 @@
       <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="../assets/custom.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
     
   </body>

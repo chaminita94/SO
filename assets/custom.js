@@ -3,6 +3,9 @@
 /* ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Initialize Mermaid diagrams
+    initMermaid();
+
     // Create scroll progress bar
     createScrollProgressBar();
 
@@ -24,6 +27,25 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initialize copy feedback
     initCopyFeedback();
 });
+
+/* ========================================================= */
+/* MERMAID DIAGRAMS                                           */
+/* ========================================================= */
+
+function initMermaid() {
+    if (typeof mermaid !== 'undefined') {
+        const isDarkMode = document.body.getAttribute('data-md-color-scheme') === 'slate';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: isDarkMode ? 'dark' : 'default',
+            securityLevel: 'loose',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true
+            }
+        });
+    }
+}
 
 /* ========================================================= */
 /* READING TIME CALCULATOR                                    */

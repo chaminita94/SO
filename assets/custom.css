@@ -171,131 +171,8 @@ body {
     }
 }
 
-/* ========================================================= */
-/* TITLES & HEADERS — FINAL ABSOLUTE OVERRIDES                */
-/* ========================================================= */
+/* Heading overrides moved to the end of the file for better specificity control */
 
-:root body .md-typeset h1,
-:root body .md-typeset .md-content__inner h1 {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
-    color: transparent !important;
-    font-weight: 700 !important;
-    margin-bottom: 1.5rem !important;
-    display: block !important;
-    width: fit-content !important;
-    letter-spacing: -0.02em !important;
-    line-height: 1.2 !important;
-}
-
-:root body .md-typeset h2,
-:root body .md-typeset .md-content__inner h2 {
-    position: relative !important;
-    margin-top: 2.5rem !important;
-    padding-bottom: 0.75rem !important;
-    font-weight: 600 !important;
-    color: #2c3e50 !important;
-    border-bottom: none !important;
-}
-
-[data-md-color-scheme="slate"] :root body .md-typeset h2 {
-    color: #e2e8f0 !important;
-}
-
-:root body .md-typeset h2::after {
-    content: "" !important;
-    position: absolute !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    width: 60px !important;
-    height: 3px !important;
-    background: linear-gradient(90deg, #667eea, #764ba2) !important;
-    border-radius: 2px !important;
-    display: block !important;
-    visibility: visible !important;
-}
-
-:root body .md-typeset h3,
-:root body .md-typeset .md-content__inner h3 {
-    margin-top: 2rem !important;
-    font-weight: 600 !important;
-    color: #475569 !important;
-}
-
-[data-md-color-scheme="slate"] :root body .md-typeset h3 {
-    color: #cbd5e1 !important;
-}
-
-/* Table Header consistency */
-:root body .md-typeset table:not([class]) th {
-    background: linear-gradient(135deg, #667eea, #764ba2) !important;
-    color: white !important;
-}
-
-/* ========================================================= */
-/* TITLES & HEADERS — FINAL ABSOLUTE OVERRIDES                */
-/* ========================================================= */
-
-:root body .md-typeset h1,
-:root body .md-typeset .md-content__inner h1 {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
-    color: transparent !important;
-    font-weight: 700 !important;
-    margin-bottom: 1.5rem !important;
-    display: block !important;
-    width: fit-content !important;
-    letter-spacing: -0.02em !important;
-    line-height: 1.2 !important;
-}
-
-:root body .md-typeset h2,
-:root body .md-typeset .md-content__inner h2 {
-    position: relative !important;
-    margin-top: 2.5rem !important;
-    padding-bottom: 0.75rem !important;
-    font-weight: 600 !important;
-    color: #2c3e50 !important;
-    border-bottom: none !important;
-}
-
-[data-md-color-scheme="slate"] :root body .md-typeset h2 {
-    color: #e2e8f0 !important;
-}
-
-:root body .md-typeset h2::after {
-    content: "" !important;
-    position: absolute !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    width: 60px !important;
-    height: 3px !important;
-    background: linear-gradient(90deg, #667eea, #764ba2) !important;
-    border-radius: 2px !important;
-    display: block !important;
-    visibility: visible !important;
-}
-
-:root body .md-typeset h3,
-:root body .md-typeset .md-content__inner h3 {
-    margin-top: 2rem !important;
-    font-weight: 600 !important;
-    color: #475569 !important;
-}
-
-[data-md-color-scheme="slate"] :root body .md-typeset h3 {
-    color: #cbd5e1 !important;
-}
-
-/* Table Header consistency */
-:root body .md-typeset table:not([class]) th {
-    background: linear-gradient(135deg, #667eea, #764ba2) !important;
-    color: white !important;
-}
 
 
 .animate-on-scroll {
@@ -598,16 +475,8 @@ a:hover::after {
     margin: 0 auto;
 }
 
-.md-content__inner h2 {
-    margin-top: 2.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: none !important;
-}
+/* Heading styles moved to consolidation block at the end */
 
-.md-content__inner h3 {
-    margin-top: 2rem;
-    color: #2c3e50;
-}
 
 /* Tables styling */
 table {
@@ -666,9 +535,8 @@ tr:hover {
     color: #ffffff !important;
 }
 
-[data-md-color-scheme="slate"] .md-content__inner h3 {
-    color: #ecf0f1;
-}
+/* Moved h3 slate color to end */
+
 
 /* ========================================================= */
 /* SIDEBAR — TEXT UNIFORME                                    */
@@ -1061,8 +929,13 @@ tr:hover {
 /* TITLES & HEADERS — FINAL ABSOLUTE OVERRIDES                */
 /* ========================================================= */
 
-:root body .md-typeset h1,
-:root body .md-typeset .md-content__inner h1 {
+/* ========================================================= */
+/* TITLES & HEADERS — CONSOLIDATED OVERRIDES                  */
+/* ========================================================= */
+
+/* Global H1 - Signature Blue-Purple-Magenta Gradient */
+:root .md-typeset h1,
+h1 {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
@@ -1072,50 +945,105 @@ tr:hover {
     margin-bottom: 1.5rem !important;
     display: block !important;
     width: fit-content !important;
-    letter-spacing: -0.02em !important;
-    line-height: 1.2 !important;
 }
 
-:root body .md-typeset h2,
-:root body .md-typeset .md-content__inner h2 {
-    position: relative !important;
+/* Global H2 - Deep Blue-Purple Gradient */
+:root .md-typeset h2,
+h2 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+    font-weight: 600 !important;
     margin-top: 2.5rem !important;
-    padding-bottom: 0.75rem !important;
+    padding-bottom: 0.5rem !important;
+    width: fit-content !important;
+}
+
+/* Global H3 - Vibrant Purple-Magenta Gradient */
+:root .md-typeset h3,
+h3 {
+    background: linear-gradient(135deg, #764ba2 0%, #f093fb 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
     font-weight: 600 !important;
-    color: #2c3e50 !important;
-    border-bottom: none !important;
-}
-
-[data-md-color-scheme="slate"] :root body .md-typeset h2 {
-    color: #e2e8f0 !important;
-}
-
-:root body .md-typeset h2::after {
-    content: "" !important;
-    position: absolute !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    width: 60px !important;
-    height: 3px !important;
-    background: linear-gradient(90deg, #667eea, #764ba2) !important;
-    border-radius: 2px !important;
-    display: block !important;
-    visibility: visible !important;
-}
-
-:root body .md-typeset h3,
-:root body .md-typeset .md-content__inner h3 {
     margin-top: 2rem !important;
-    font-weight: 600 !important;
-    color: #475569 !important;
+    width: fit-content !important;
 }
 
-[data-md-color-scheme="slate"] :root body .md-typeset h3 {
-    color: #cbd5e1 !important;
+/* Slate Mode Adjustments - Brighter Gradients for Dark Background */
+[data-md-color-scheme="slate"] .md-typeset h1,
+[data-md-color-scheme="slate"] h1 {
+    background: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #f472b6 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    display: block !important;
+    width: fit-content !important;
 }
 
-/* Table Header consistency */
-:root body .md-typeset table:not([class]) th {
-    background: linear-gradient(135deg, #667eea, #764ba2) !important;
-    color: white !important;
+[data-md-color-scheme="slate"] .md-typeset h2,
+[data-md-color-scheme="slate"] h2 {
+    background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    display: block !important;
+    width: fit-content !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h3,
+[data-md-color-scheme="slate"] h3 {
+    background: linear-gradient(135deg, #a78bfa 0%, #f472b6 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    display: block !important;
+    width: fit-content !important;
+}
+
+/* ========================================================= */
+/* MERMAID DIAGRAM READABILITY FIX                            */
+/* ========================================================= */
+
+.mermaid {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 1.5rem 0;
+}
+
+[data-md-color-scheme="slate"] .mermaid svg {
+    background-color: transparent !important;
+}
+
+[data-md-color-scheme="slate"] .mermaid .node rect,
+[data-md-color-scheme="slate"] .mermaid .node circle,
+[data-md-color-scheme="slate"] .mermaid .node polygon {
+    fill: #1e293b !important;
+    stroke: #667eea !important;
+}
+
+[data-md-color-scheme="slate"] .mermaid .node .label,
+[data-md-color-scheme="slate"] .mermaid text {
+    fill: #ffffff !important;
+    color: #ffffff !important;
+    font-weight: 500;
+}
+
+/* Fix for sequence diagrams */
+[data-md-color-scheme="slate"] .mermaid .actor {
+    fill: #334155 !important;
+    stroke: #667eea !important;
+}
+
+[data-md-color-scheme="slate"] .mermaid .messageText {
+    fill: #e2e8f0 !important;
+    stroke: none !important;
 }
